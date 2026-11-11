@@ -3,9 +3,9 @@ import { createBook, readBook, updateBook, deleteBook } from "./bookControllers.
 
 const bookRouter = Router();
 
-bookRouter.post("/book",createBook);
-bookRouter.get("/book/:id",readBook);
-bookRouter.put("/book/:id",updateBook);
-bookRouter.delete("/book/:id",deleteBook);
+bookRouter.post("/",createBook);
+bookRouter.get("/:id",readBook);
+bookRouter.put("/:id",updateBook);
+bookRouter.delete("/:id",deleteBook);
 
 export default bookRouter;
