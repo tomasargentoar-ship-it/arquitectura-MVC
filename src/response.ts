@@ -1,0 +1,9 @@
+import {type Response} from "express";
+
+export const sendResponse = async(res: Response,statusCode:number,success:boolean,message:string,data:any) => {
+res.status(statusCode).json({
+    success,
+    message,
+    data
+})
+}
