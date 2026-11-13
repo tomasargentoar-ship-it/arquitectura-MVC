@@ -1,11 +1,10 @@
 import mongoose from "mongoose";
 
-process.loadEnvFile()
-
 mongoose.connect(process.env.URI_DB || "mongodb://localhost:27017/diccionario")
 
 export const connectDB = async () => {
 try {
+    process.loadEnvFile()
     await mongoose.connect(process.env.URI_DB || "mongodb://localhost:27017/diccionario")
     console.log("Connected to the database");
 }

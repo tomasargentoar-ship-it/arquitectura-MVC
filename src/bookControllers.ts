@@ -29,6 +29,14 @@ try{
 
 }}
 
+export const getAllBooks = async (req:Request,res:Response)=>{
+    try{
+    const books = await BookComplete.find();
+    await sendResponse(res,200,true,"Books retrieved successfully",books);
+    }catch(error){
+    await sendResponse(res,404,false,"Error retrieving books",error);
+    }
+}
 
 export const updateBook = async (req:Request,res:Response)=>{
 try{
